@@ -1,3 +1,10 @@
+//References
+//https://vimeo.com/190474651
+//https://www.youtube.com/watch?v=H1Dvg2MxQn8
+//https://p5js.org/reference/#/p5/keyTyped
+//ants sketch from class
+//https://p5js.org/examples/hello-p5-song.html
+
 var firework = [];
 
 //Natural notes
@@ -27,7 +34,7 @@ var swidth = 5;
 var sheight = 5;
 
 function setup() {
-  createCanvas(400, 400);
+  	createCanvas(800,800);
 	
 	//Natural Notes
     oscC = new p5.Oscillator();
@@ -99,7 +106,7 @@ function setup() {
 }
 
 function draw() {
-  background(220, 50);
+  	background(220, 50);
 
 	noStroke();
 	for ( var i = 0; i < firework.length; i++){
@@ -112,36 +119,36 @@ function draw() {
 	//White keys
 	stroke(0);
 	fill(255);
-	for(i = 0; i < 500; i += 50){
-		rect(i,300,50,100);
+	for(i = 0; i < 1000; i += 100){
+		rect(i,600,100,200);
 	}
 	
 	//Black keys
 	fill(0);
-	rect(37.5,300,25,75);
-	rect(87.5,300,25,75);
-	rect(187.5,300,25,75);
-	rect(237.5,300,25,75);
-	rect(287.5,300,25,75);
+	rect(75,600,50,150);
+	rect(175,600,50,150);
+	rect(375,600,50,150);
+	rect(475,600,50,150);
+	rect(575,600,50,150);
 	
 	//Letters on piano
-	textSize(16);
+	textSize(32);
 	textAlign(RIGHT);
-	text('A', 30, 390);
-	text('S', 80, 390);
-	text('D', 130, 390);
-	text('F', 180, 390);
-	text('G', 230, 390);
-	text('H', 280, 390);
-	text('J', 330, 390);
-	text('K', 380, 390);
+	text('A', 60, 780);
+	text('S', 160, 780);
+	text('D', 260, 780);
+	text('F', 360, 780);
+	text('G', 460, 780);
+	text('H', 560, 780);
+	text('J', 660, 780);
+	text('K', 760, 780);
 	
 	fill(255);
-	text('W', 55, 370);
-	text('E', 105, 370);
-	text('T', 205, 370);
-	text('Y', 255, 370);
-	text('U', 305, 370);
+	text('W', 110, 740);
+	text('E', 210, 740);
+	text('T', 410, 740);
+	text('Y', 510, 740);
+	text('U', 610, 740);
 	
 
 }
@@ -153,49 +160,49 @@ function keyPressed(){
 	if (keyCode === 65) {
 		oscC.amp(0.5, 0.05);
 		oscC.freq(notes[0]);
-    playing = true;
+    	playing = true;
 	}
 	//D
-		if (keyCode === 83) {
+	if (keyCode === 83) {
 		oscD.amp(0.5, 0.05);
 		oscD.freq(notes[2]);
-    playing = true;
+    	playing = true;
 	}
 	//E
 	if (keyCode === 68) {
-    oscE.amp(0.5, 0.05);
+    	oscE.amp(0.5, 0.05);
 		oscE.freq(notes[4]);
-    playing = true;
+    	playing = true;
 	}
 	//F
 	if (keyCode === 70) {
 		oscF.amp(0.5, 0.05);
 		oscF.freq(notes[5]);
-    playing = true;
+    	playing = true;
 	}
 	//G
 	if (keyCode === 71) {
-    oscG.amp(0.5, 0.05);
+    	oscG.amp(0.5, 0.05);
 		oscG.freq(notes[7]);
-    playing = true;
+    	playing = true;
 	}
 	//A
 	if (keyCode === 72) {
 		oscA.amp(0.5, 0.05);
 		oscA.freq(notes[9]);
-    playing = true;
+   	 	playing = true;
 	}
 	//B
-		if (keyCode === 74) {
+	if (keyCode === 74) {
 		oscB.amp(0.5, 0.05);
 		oscB.freq(notes[11]);
-    playing = true;
+    	playing = true;
 	}
 	//C
-		if (keyCode === 75) {
+	if (keyCode === 75) {
 		oscC5.amp(0.5, 0.05);
 		oscC5.freq(notes[12]);
-    playing = true;
+    	playing = true;
 	}
 	
 	// #/b notes
@@ -203,31 +210,31 @@ function keyPressed(){
 	if (keyCode === 87) {
 		oscCs.amp(0.5, 0.05);
 		oscCs.freq(notes[1]);
-    playing = true;
+    	playing = true;
 	}
 	//D#
 	if (keyCode === 69) {
-    oscDs.amp(0.5, 0.05);
+    	oscDs.amp(0.5, 0.05);
 		oscDs.freq(notes[3]);
-    playing = true;
+    	playing = true;
 	}
 	//F#
 	if (keyCode === 84) {
 		oscFs.amp(0.5, 0.05);
 		oscFs.freq(notes[6]);
-    playing = true;
+    	playing = true;
 	}
 	//G#
- 		if (keyCode === 89) {
+ 	if (keyCode === 89) {
 		oscGs.amp(0.5, 0.05);
 		oscGs.freq(notes[8]);
-    playing = true;
+    	playing = true;
 	}
 	//A#
-		if (keyCode === 85) {
+	if (keyCode === 85) {
 		oscAs.amp(0.5, 0.05);
 		oscAs.freq(notes[10]);
-    playing = true;
+    	playing = true;
 	}
 }
 
@@ -236,69 +243,69 @@ function keyReleased(){
 	//C
 	if (keyCode === 65) {
 		oscC.amp(0, 0.5);
-    playing = false;
+    	playing = false;
 	}
 	//D
 	if (keyCode === 83) {
 		oscD.amp(0, 0.5);
-    playing = false;
+    	playing = false;
 	}
 	//E
 	if (keyCode === 68) {
 		oscE.amp(0, 0.5);
-    playing = false;
+    	playing = false;
 	}
 	//F
 		if (keyCode === 70) {
 		oscF.amp(0, 0.5);
-    playing = false;
+    	playing = false;
 	}
 	//G
 	if (keyCode === 71) {
 		oscG.amp(0, 0.5);
-    playing = false;
+    	playing = false;
 	}
 	//A
 	if (keyCode === 72) {
 		oscA.amp(0, 0.5);
-    playing = false;
+    	playing = false;
 	}
 	//B
 	if (keyCode === 74) {
 		oscB.amp(0, 0.5);
-    playing = false;
+    	playing = false;
 	}
 	//C
 	if (keyCode === 75) {
 		oscC5.amp(0, 0.5);
-    playing = false;
+    	playing = false;
 	}
 	
 		// #/b notes
 	//C#
 	if (keyCode === 87) {
 		oscCs.amp(0, 0.5);
-    playing = false;
+    	playing = false;
 	}
 	//D#
 	if (keyCode === 69) {
 		oscDs.amp(0, 0.5);
-    playing = false;
+    	playing = false;
 	}
 	//F#
 	if (keyCode === 84) {
 		oscFs.amp(0, 0.5);
-    playing = false;
+    	playing = false;
 	}
 	//G#
 	if (keyCode === 89) {
 		oscGs.amp(0, 0.5);
-    playing = false;
+    	playing = false;
 	}
 	//A#
 	if (keyCode === 85) {
 		oscAs.amp(0, 0.5);
-    playing = false;
+    	playing = false;
 	}
 }
 
@@ -308,7 +315,7 @@ function keyTyped() {
 	for ( var i = 0; i < 10; i++){
 		var fireworks = {
 			x: 30, 
-			y: 290,
+			y: 580,
 			xaccel: random(-0.1, 0.1),
 			yaccel: random(-0.1),
 			xspeed: random(-.4,.4),
@@ -316,28 +323,26 @@ function keyTyped() {
 			march: function (){// update the x and y
 				if (this.x > width || this.x < 0){
 					this.xspeed *= -1;
-					//this.xaccel *= -1;
 				}
-				if ( this.y > 300 || this.y < 0){
+				if ( this.y > 600 || this.y < 0){
 					this.yspeed *= -1;
-					//this.yaccel *= -1;
 				}
-			  this.xspeed += this.xaccel;
-			  this.yspeed += this.yaccel;
+			  	this.xspeed += this.xaccel;
+			  	this.yspeed += this.yaccel;
 				this.x += this.xspeed;
 				this.y += this.yspeed;
 			}
 		};
 			firework.push(fireworks);
   	}
-	}
+}
 	
 if (key === 's'){
 
 	for ( var i = 0; i < 10; i++){
 		var fireworks = {
-			x: 80, 
-			y: 290,
+			x: 160, 
+			y: 580,
 			xaccel: random(-0.1, 0.1),
 			yaccel: random(-0.1),
 			xspeed: random(-.4,.4),
@@ -347,26 +352,26 @@ if (key === 's'){
 					this.xspeed *= -1;
 					//this.xaccel *= -1;
 				}
-				if ( this.y > 300 || this.y < 0){
+				if ( this.y > 600 || this.y < 0){
 					this.yspeed *= -1;
 					//this.yaccel *= -1;
 				}
-			  this.xspeed += this.xaccel;
-			  this.yspeed += this.yaccel;
+			  	this.xspeed += this.xaccel;
+			  	this.yspeed += this.yaccel;
 				this.x += this.xspeed;
 				this.y += this.yspeed;
 			}
 		};
 			firework.push(fireworks);
   	}
-	}
+}
 	
 if (key === 'd'){
 
 	for ( var i = 0; i < 10; i++){
 		var fireworks = {
-			x: 130, 
-			y: 290,
+			x: 260, 
+			y: 580,
 			xaccel: random(-0.1, 0.1),
 			yaccel: random(-0.1),
 			xspeed: random(-.4,.4),
@@ -376,26 +381,26 @@ if (key === 'd'){
 					this.xspeed *= -1;
 					//this.xaccel *= -1;
 				}
-				if ( this.y > 300 || this.y < 0){
+				if ( this.y > 600 || this.y < 0){
 					this.yspeed *= -1;
 					//this.yaccel *= -1;
 				}
-			  this.xspeed += this.xaccel;
-			  this.yspeed += this.yaccel;
+			  	this.xspeed += this.xaccel;
+			  	this.yspeed += this.yaccel;
 				this.x += this.xspeed;
 				this.y += this.yspeed;
 			}
 		};
 			firework.push(fireworks);
   	}
-	}
+}
 	
 if (key === 'f'){
 
 	for ( var i = 0; i < 10; i++){
 		var fireworks = {
-			x: 180, 
-			y: 290,
+			x: 360, 
+			y: 580,
 			xaccel: random(-0.1, 0.1),
 			yaccel: random(-0.1),
 			xspeed: random(-.4,.4),
@@ -405,26 +410,26 @@ if (key === 'f'){
 					this.xspeed *= -1;
 					//this.xaccel *= -1;
 				}
-				if ( this.y > 300 || this.y < 0){
+				if ( this.y > 600 || this.y < 0){
 					this.yspeed *= -1;
 					//this.yaccel *= -1;
 				}
-			  this.xspeed += this.xaccel;
-			  this.yspeed += this.yaccel;
+			  	this.xspeed += this.xaccel;
+			  	this.yspeed += this.yaccel;
 				this.x += this.xspeed;
 				this.y += this.yspeed;
 			}
 		};
 			firework.push(fireworks);
   	}
-	}
+}
 	
 if (key === 'g'){
 
 	for ( var i = 0; i < 10; i++){
 		var fireworks = {
-			x: 230, 
-			y: 290,
+			x: 460, 
+			y: 580,
 			xaccel: random(-0.1, 0.1),
 			yaccel: random(-0.1),
 			xspeed: random(-.4,.4),
@@ -434,26 +439,26 @@ if (key === 'g'){
 					this.xspeed *= -1;
 					//this.xaccel *= -1;
 				}
-				if ( this.y > 300 || this.y < 0){
+				if ( this.y > 600 || this.y < 0){
 					this.yspeed *= -1;
 					//this.yaccel *= -1;
 				}
-			  this.xspeed += this.xaccel;
-			  this.yspeed += this.yaccel;
+			  	this.xspeed += this.xaccel;
+			  	this.yspeed += this.yaccel;
 				this.x += this.xspeed;
 				this.y += this.yspeed;
 			}
 		};
 			firework.push(fireworks);
   	}
-	}
+}
 	
 if (key === 'h'){
 
 	for ( var i = 0; i < 10; i++){
 		var fireworks = {
-			x: 280, 
-			y: 290,
+			x: 560, 
+			y: 580,
 			xaccel: random(-0.1, 0.1),
 			yaccel: random(-0.1),
 			xspeed: random(-.4,.4),
@@ -463,26 +468,26 @@ if (key === 'h'){
 					this.xspeed *= -1;
 					//this.xaccel *= -1;
 				}
-				if ( this.y > 300 || this.y < 0){
+				if ( this.y > 600 || this.y < 0){
 					this.yspeed *= -1;
 					//this.yaccel *= -1;
 				}
-			  this.xspeed += this.xaccel;
-			  this.yspeed += this.yaccel;
+			  	this.xspeed += this.xaccel;
+			  	this.yspeed += this.yaccel;
 				this.x += this.xspeed;
 				this.y += this.yspeed;
 			}
 		};
 			firework.push(fireworks);
   	}
-	}
+}
 	
 if (key === 'j'){
 
 	for ( var i = 0; i < 10; i++){
 		var fireworks = {
-			x: 330, 
-			y: 290,
+			x: 660, 
+			y: 580,
 			xaccel: random(-0.1, 0.1),
 			yaccel: random(-0.1),
 			xspeed: random(-.4,.4),
@@ -492,26 +497,26 @@ if (key === 'j'){
 					this.xspeed *= -1;
 					//this.xaccel *= -1;
 				}
-				if ( this.y > 300 || this.y < 0){
+				if ( this.y > 600 || this.y < 0){
 					this.yspeed *= -1;
 					//this.yaccel *= -1;
 				}
-			  this.xspeed += this.xaccel;
-			  this.yspeed += this.yaccel;
+			  	this.xspeed += this.xaccel;
+			  	this.yspeed += this.yaccel;
 				this.x += this.xspeed;
 				this.y += this.yspeed;
 			}
 		};
 			firework.push(fireworks);
   	}
-	}
+}
 	
 if (key === 'k'){
 
 	for ( var i = 0; i < 10; i++){
 		var fireworks = {
-			x: 380, 
-			y: 290,
+			x: 760, 
+			y: 580,
 			xaccel: random(-0.1, 0.1),
 			yaccel: random(-0.1),
 			xspeed: random(-.4,.4),
@@ -521,26 +526,26 @@ if (key === 'k'){
 					this.xspeed *= -1;
 					//this.xaccel *= -1;
 				}
-				if ( this.y > 300 || this.y < 0){
+				if ( this.y > 600 || this.y < 0){
 					this.yspeed *= -1;
 					//this.yaccel *= -1;
 				}
-			  this.xspeed += this.xaccel;
-			  this.yspeed += this.yaccel;
+			  	this.xspeed += this.xaccel;
+			  	this.yspeed += this.yaccel;
 				this.x += this.xspeed;
 				this.y += this.yspeed;
 			}
 		};
 			firework.push(fireworks);
   	}
-	}
+}
 	
 if (key === 'w'){
 
 	for ( var i = 0; i < 10; i++){
 		var fireworks = {
-			x: 55, 
-			y: 290,
+			x: 110, 
+			y: 580,
 			xaccel: random(-0.1, 0.1),
 			yaccel: random(-0.1),
 			xspeed: random(-.4,.4),
@@ -550,26 +555,26 @@ if (key === 'w'){
 					this.xspeed *= -1;
 					//this.xaccel *= -1;
 				}
-				if ( this.y > 300 || this.y < 0){
+				if ( this.y > 600 || this.y < 0){
 					this.yspeed *= -1;
 					//this.yaccel *= -1;
 				}
-			  this.xspeed += this.xaccel;
-			  this.yspeed += this.yaccel;
+			  	this.xspeed += this.xaccel;
+			  	this.yspeed += this.yaccel;
 				this.x += this.xspeed;
 				this.y += this.yspeed;
 			}
 		};
 			firework.push(fireworks);
   	}
-	}
+}
 	
 if (key === 'e'){
 
 	for ( var i = 0; i < 10; i++){
 		var fireworks = {
-			x: 105, 
-			y: 290,
+			x: 210, 
+			y: 580,
 			xaccel: random(-0.1, 0.1),
 			yaccel: random(-0.1),
 			xspeed: random(-.4,.4),
@@ -579,26 +584,26 @@ if (key === 'e'){
 					this.xspeed *= -1;
 					//this.xaccel *= -1;
 				}
-				if ( this.y > 300 || this.y < 0){
+				if ( this.y > 600 || this.y < 0){
 					this.yspeed *= -1;
 					//this.yaccel *= -1;
 				}
-			  this.xspeed += this.xaccel;
-			  this.yspeed += this.yaccel;
+			  	this.xspeed += this.xaccel;
+			  	this.yspeed += this.yaccel;
 				this.x += this.xspeed;
 				this.y += this.yspeed;
 			}
 		};
 			firework.push(fireworks);
   	}
-	}
+}
 	
 if (key === 't'){
 
 	for ( var i = 0; i < 10; i++){
 		var fireworks = {
-			x: 205, 
-			y: 290,
+			x: 410, 
+			y: 580,
 			xaccel: random(-0.1, 0.1),
 			yaccel: random(-0.1),
 			xspeed: random(-.4,.4),
@@ -608,26 +613,26 @@ if (key === 't'){
 					this.xspeed *= -1;
 					//this.xaccel *= -1;
 				}
-				if ( this.y > 300 || this.y < 0){
+				if ( this.y > 600 || this.y < 0){
 					this.yspeed *= -1;
 					//this.yaccel *= -1;
 				}
-			  this.xspeed += this.xaccel;
-			  this.yspeed += this.yaccel;
+			  	this.xspeed += this.xaccel;
+			  	this.yspeed += this.yaccel;
 				this.x += this.xspeed;
 				this.y += this.yspeed;
 			}
 		};
 			firework.push(fireworks);
   	}
-	}
+}
 	
 if (key === 'y'){
 
 	for ( var i = 0; i < 10; i++){
 		var fireworks = {
-			x: 255, 
-			y: 290,
+			x: 510, 
+			y: 580,
 			xaccel: random(-0.1, 0.1),
 			yaccel: random(-0.1),
 			xspeed: random(-.4,.4),
@@ -637,26 +642,26 @@ if (key === 'y'){
 					this.xspeed *= -1;
 					//this.xaccel *= -1;
 				}
-				if ( this.y > 300 || this.y < 0){
+				if ( this.y > 600 || this.y < 0){
 					this.yspeed *= -1;
 					//this.yaccel *= -1;
 				}
-			  this.xspeed += this.xaccel;
-			  this.yspeed += this.yaccel;
+			  	this.xspeed += this.xaccel;
+			  	this.yspeed += this.yaccel;
 				this.x += this.xspeed;
 				this.y += this.yspeed;
 			}
 		};
 			firework.push(fireworks);
   	}
-	}
+}
 	
 if (key === 'u'){
 
 	for ( var i = 0; i < 10; i++){
 		var fireworks = {
-			x: 305, 
-			y: 290,
+			x: 610, 
+			y: 580,
 			xaccel: random(-0.1, 0.1),
 			yaccel: random(-0.1),
 			xspeed: random(-.4,.4),
@@ -666,18 +671,17 @@ if (key === 'u'){
 					this.xspeed *= -1;
 					//this.xaccel *= -1;
 				}
-				if ( this.y > 300 || this.y < 0){
+				if ( this.y > 600 || this.y < 0){
 					this.yspeed *= -1;
 					//this.yaccel *= -1;
 				}
-			  this.xspeed += this.xaccel;
-			  this.yspeed += this.yaccel;
+			  	this.xspeed += this.xaccel;
+			  	this.yspeed += this.yaccel;
 				this.x += this.xspeed;
 				this.y += this.yspeed;
 			}
 		};
 			firework.push(fireworks);
   	}
-	}
-	
+}	
 }
